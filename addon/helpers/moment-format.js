@@ -28,6 +28,10 @@ export default function helperFactory(globalOutputFormat = 'LLLL', globalAllowEm
       time = time.locale(hash.locale);
     }
 
+    if (hash.timezone) {
+      time.tz(hash.timezone);
+    }
+
     return time.format(output);
   }, globalAllowEmpty);
 }
